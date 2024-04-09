@@ -1,11 +1,11 @@
 from django.db import models
 from django_jalali.db import models as jmodels
-
+import jdatetime
 
 class Music(models.Model):
     name = models.CharField("نام آهنگ", blank=True, null=True, max_length=50)
     description = models.TextField("توضیحات", blank=True, null=True)
-    release = jmodels.jDateField(verbose_name="تاریخ انتشار")
+    release = jmodels.jDateField(verbose_name="تاریخ انتشار", default=jdatetime.date.today())
     spotify = models.TextField("لینک اسپاتیفای این آهنگ", blank=True, null=True)
     apple = models.TextField("لینک اپل موزیک این آهنگ", blank=True, null=True)
     youtube = models.TextField("لینک یوتیوب این آهنگ", blank=True, null=True)
