@@ -2,6 +2,7 @@ from django.db import models
 from django_jalali.db import models as jmodels
 import jdatetime
 
+
 class Music(models.Model):
     name = models.CharField("نام آهنگ", blank=True, null=True, max_length=50)
     description = models.TextField("توضیحات", blank=True, null=True)
