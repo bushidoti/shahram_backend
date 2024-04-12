@@ -8,6 +8,7 @@ class Music(models.Model):
     description = models.TextField("توضیحات", blank=True, null=True)
     release = jmodels.jDateField(verbose_name="تاریخ انتشار", default=jdatetime.date.today())
     spotify = models.TextField("لینک اسپاتیفای این آهنگ", blank=True, null=True)
+    shazam = models.TextField("لینک شازم این آهنگ", blank=True, null=True)
     apple = models.TextField("لینک اپل موزیک این آهنگ", blank=True, null=True)
     youtube = models.TextField("لینک یوتیوب این آهنگ", blank=True, null=True)
     music = models.FileField("فایل آهنگ", upload_to='static_media/media/music/', blank=True, null=True)
