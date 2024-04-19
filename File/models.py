@@ -1,11 +1,13 @@
 from django.db import models
 from django_jalali.db import models as jmodels
 import jdatetime
+from django.core.validators import MinLengthValidator
 
 
 class Music(models.Model):
     name = models.CharField("نام آهنگ", blank=True, null=True, max_length=50)
-    description = models.TextField("توضیحات", blank=True, null=True)
+    description = models.CharField("توضیحات", blank=True, null=True, max_length=300,
+                                   validators=[MinLengthValidator(70)])
     release = jmodels.jDateField(verbose_name="تاریخ انتشار", default=jdatetime.date.today())
     spotify = models.TextField("لینک اسپاتیفای این آهنگ", blank=True, null=True)
     shazam = models.TextField("لینک شازم این آهنگ", blank=True, null=True)
