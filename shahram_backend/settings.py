@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'File',
     'selfie',
     'panel',
+    'colorfield',
     'django_filters',
 ]
 
